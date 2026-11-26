@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile | Nyamanin</title>
+    <link rel="stylesheet" href="profile.css">
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="logo" href="index.html">nyamanin.com</a>
+      <nav><a href="index.html">Beranda</a><a href="disukai.html">Disukai</a><a href="riwayat.html">Riwayat</a><a href="tentang-kami.html">Tentang Kami</a><a href="profile.html" class="aktif">Profile</a></nav>
+    </header>
+    <main class="wadah">
+      <div class="profil-kepala">
+        <div class="avatar" aria-hidden="true">AF</div>
+        <div>
+          <h1>Ahmad Fauzi</h1>
+          <p class="sub">ahmad.fauzi@email.com · Anggota sejak November 2024</p>
+        </div>
+        <a class="tombol tombol-garis" href="index.html">Keluar</a>
+      </div>
+      <div class="ringkas">
+        <div class="kartu"><strong>4</strong><span class="sub">Total pemesanan</span></div>
+        <div class="kartu"><strong>7</strong><span class="sub">Villa disukai</span></div>
+        <div class="kartu"><strong>2</strong><span class="sub">Ulasan ditulis</span></div>
+      </div>
+      <div class="isi-samping profil-isi">
+        <nav class="kartu menu-profil" aria-label="Menu profil"><a class="aktif" href="#data-diri">Data diri</a> <a href="#keamanan">Keamanan</a> <a href="#notifikasi">Notifikasi</a> <a href="riwayat.html">Riwayat pesanan</a> <a href="disukai.html">Villa disukai</a></nav>
+        <div>
+          <section class="kartu bagian-profil" id="data-diri">
+            <h2>Data diri</h2>
+            <p class="sub">Dipakai untuk mengisi data tamu saat memesan villa.</p>
+            <form class="form-profil" action="#">
+              <div class="dua-kolom"><label>Nama lengkap<input class="isian" type="text" value="Ahmad Fauzi" required></label> <label>No telepon<input class="isian" type="tel" placeholder="0000-0000-0000"></label> <label>E-mail<input class="isian" type="email" value="ahmad.fauzi@email.com" required></label> <label>Kota asal<input class="isian" type="text" placeholder="Contoh: Malang"></label></div>
+              <button class="tombol" type="submit">Simpan perubahan</button>
+            </form>
+          </section>
+          <section class="kartu bagian-profil" id="keamanan">
+            <h2>Keamanan</h2>
+            <p class="sub">Gunakan kata sandi minimal 8 karakter.</p>
+            <form class="form-profil" action="#">
+              <label>Kata sandi lama<input class="isian" type="password" autocomplete="current-password"></label>
+              <div class="dua-kolom"><label>Kata sandi baru<input class="isian" type="password" minlength="8" autocomplete="new-password"></label> <label>Ulangi kata sandi baru<input class="isian" type="password" minlength="8" autocomplete="new-password"></label></div>
+              <button class="tombol" type="submit">Ubah kata sandi</button>
+            </form>
+          </section>
+          <section class="kartu bagian-profil" id="notifikasi">
+            <h2>Notifikasi</h2>
+            <p class="sub">Pilih kabar yang ingin Anda terima lewat e-mail.</p>
+            <label class="sakelar"><span>Konfirmasi dan pengingat pemesanan</span><input type="checkbox" checked></label>
+            <label class="sakelar"><span>Promo dan villa baru</span><input type="checkbox"></label>
+            <label class="sakelar"><span>Pengingat menulis ulasan setelah menginap</span><input type="checkbox" checked></label>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-isi">
+        <div>
+          <img class="footer-logo" src="img/logo.png" alt="Logo Nyamanin">
+          <p>Selalu lengkapilah setiap momenmu bersama Nyamanin.com. Penyedia layanan persewaan villa dengan sistem dan layanan terbaik 24/7</p>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <p>(+62) 0858-9583-6445</p>
+          <p>(+62) 0895-1548-0677</p>
+          <p>nyamanin@gmail.com</p>
+        </div>
+        <div>
+          <h4>Lokasi</h4>
+          <p>JL.TANIMBAR NO 22</p>
+          <p>KASIN-KLOJEN</p>
+          <p>KOTA MALANG</p>
+        </div>
+        <div>
+          <h4>Sosial Media Kami</h4>
+          <a href="#">Instagram</a>
+          <a href="#">FaceBook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

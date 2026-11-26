@@ -1,0 +1,302 @@
+/* CSS halaman pemesanan: berdiri sendiri, tidak memakai file CSS lain */
+/* Hanya dua warna: teal #003f51 dan putih. Abu-abu/pudar = teal yang dibuat transparan. */
+:root {
+  --teal: #003f51;
+  --garis: rgba(0,63,81,.15);
+  --redup: rgba(0,63,81,.65);
+  --tipis: rgba(0,63,81,.07);
+  --radius: 16px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Plus Jakarta Sans",Arial,sans-serif;
+  background: #fff;
+  color: var(--teal);
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--tipis);
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+::placeholder {
+  color: var(--redup);
+  opacity: 1;
+}
+h1,
+h2 {
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+h1 {
+  font-size: clamp(2rem,4vw,3rem);
+}
+h2 {
+  font-size: clamp(1.5rem,2.6vw,2rem);
+}
+h3 {
+  line-height: 1.3;
+}
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+.wadah {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.sub {
+  color: var(--redup);
+  font-size: 14px;
+  margin-top: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none!important;
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 48px;
+  background: #fff;
+  border-bottom: 1px solid var(--garis);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background .3s;
+}
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--teal);
+}
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+.navbar nav a {
+  color: var(--redup);
+  font-size: 15px;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: .2s;
+}
+.navbar nav a:hover {
+  color: var(--teal);
+}
+.navbar nav a.aktif {
+  color: var(--teal);
+  font-weight: 700;
+  border-bottom-color: var(--teal);
+}
+
+/* Navbar transparan di atas foto (beranda); jadi (beranda) */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+  .navbar nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--teal);
+  color: #fff;
+  padding: 56px 48px;
+}
+.footer-isi {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+.footer h4 {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.footer p,
+.footer a {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,.88);
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+@media (max-width: 800px) {
+  .footer-isi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== TOMBOL ===== */
+.tombol {
+  display: inline-block;
+  padding: 12px 26px;
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: .25s;
+}
+.tombol:hover {
+  background: #fff;
+  color: var(--teal);
+}
+
+/* untuk latar teal */
+.penuh {
+  display: block;
+  width: 100%;
+}
+
+/* ===== KARTU, FORM, LAYOUT, HARGA ===== */
+.kartu {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.isian {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  background: var(--tipis);
+  font: inherit;
+  margin: 6px 0 18px;
+}
+.isian:focus {
+  outline: 2px solid var(--teal);
+  background: #fff;
+}
+.dua-kolom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.isi-samping {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.baris {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 14px;
+  color: var(--redup);
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--garis);
+  margin: 12px 0 20px;
+  padding-top: 16px;
+  font-weight: 700;
+}
+.total strong {
+  font-size: 24px;
+  color: var(--teal);
+}
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: var(--tipis);
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+}
+@media (max-width: 800px) {
+  .dua-kolom,
+  .isi-samping {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CSS khusus Pemesanan */
+.dua-sama {
+  grid-template-columns: 1fr 1fr;
+}
+.judul-form {
+  margin-top: 40px;
+}
+.form {
+  margin-top: 20px;
+}
+.form label {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--teal);
+}
+.foto {
+  height: 300px;
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+.pesan hr {
+  border: 0;
+  border-top: 1px solid var(--garis);
+  margin: 16px 0;
+}
+.pesan h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .dua-sama {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,567 @@
+/* CSS halaman hasil-pencarian: berdiri sendiri, tidak memakai file CSS lain */
+/* Hanya dua warna: teal #003f51 dan putih. Abu-abu/pudar = teal yang dibuat transparan. */
+:root {
+  --teal: #003f51;
+  --garis: rgba(0,63,81,.15);
+  --redup: rgba(0,63,81,.65);
+  --tipis: rgba(0,63,81,.07);
+  --radius: 16px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Plus Jakarta Sans",Arial,sans-serif;
+  background: #fff;
+  color: var(--teal);
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--tipis);
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+::placeholder {
+  color: var(--redup);
+  opacity: 1;
+}
+h1,
+h2 {
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+h1 {
+  font-size: clamp(2rem,4vw,3rem);
+}
+h2 {
+  font-size: clamp(1.5rem,2.6vw,2rem);
+}
+h3 {
+  line-height: 1.3;
+}
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+.wadah {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.sub {
+  color: var(--redup);
+  font-size: 14px;
+  margin-top: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none!important;
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 48px;
+  background: #fff;
+  border-bottom: 1px solid var(--garis);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background .3s;
+}
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--teal);
+}
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+.navbar nav a {
+  color: var(--redup);
+  font-size: 15px;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: .2s;
+}
+.navbar nav a:hover {
+  color: var(--teal);
+}
+.navbar nav a.aktif {
+  color: var(--teal);
+  font-weight: 700;
+  border-bottom-color: var(--teal);
+}
+
+/* Navbar transparan di atas foto (beranda); jadi (beranda) */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+  .navbar nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--teal);
+  color: #fff;
+  padding: 56px 48px;
+}
+.footer-isi {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+.footer h4 {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.footer p,
+.footer a {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,.88);
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+@media (max-width: 800px) {
+  .footer-isi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== KARTU VILLA ===== */
+.grid-villa {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 32px;
+}
+.kartu-villa {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: .3s;
+}
+.kartu-villa:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,63,81,.14);
+}
+.foto-villa {
+  position: relative;
+  overflow: hidden;
+}
+.foto-villa img {
+  height: 230px;
+  transition: transform .6s;
+}
+.kartu-villa:hover .foto-villa img {
+  transform: scale(1.05);
+}
+.label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 99px;
+}
+.rating {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+.isi-villa {
+  padding: 18px;
+}
+.isi-villa h3 {
+  font-size: 18px;
+}
+.lokasi {
+  color: var(--redup);
+  font-size: 14px;
+}
+.tag {
+  display: inline-block;
+  background: var(--tipis);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin: 8px 4px 0 0;
+}
+.harga-baris {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--garis);
+  margin-top: 16px;
+  padding-top: 16px;
+}
+.harga {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--teal);
+}
+.harga small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--redup);
+}
+.lihat {
+  padding: 7px 16px;
+  font-size: 13px;
+  border-radius: 99px;
+  background: var(--tipis);
+  color: var(--teal);
+  font-weight: 700;
+  transition: .2s;
+}
+.lihat:hover {
+  background: var(--teal);
+  color: #fff;
+}
+@media (max-width: 800px) {
+  .grid-villa {
+    grid-template-columns: 1fr;
+  }
+}
+.hati {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 17px;
+  color: var(--teal);
+  transition: .2s;
+}
+.hati input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.hati span::before {
+  content: "♡";
+}
+.hati:hover {
+  transform: scale(1.12);
+  color: var(--teal);
+}
+.hati:has(input:checked) {
+  color: var(--teal);
+}
+.hati:has(input:checked) span::before {
+  content: "♥";
+}
+.hati:has(input:focus-visible) {
+  outline: 3px solid var(--teal);
+}
+
+/* ===== TAB & NOMOR HALAMAN ===== */
+.paging {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--garis);
+  margin-top: 40px;
+  padding-top: 24px;
+  font-size: 14px;
+}
+.paging div {
+  display: flex;
+  gap: 8px;
+}
+.paging a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--garis);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  transition: .2s;
+}
+.paging a:hover {
+  border-color: var(--teal);
+}
+.paging a.aktif {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+/* ===== KOTAK PENCARIAN (tanpa JavaScript: memakai pilihan bawaan browser) ===== */
+.cari {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 18px 40px rgba(0,63,81,.18);
+  width: calc(100% - 48px);
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 8px;
+}
+.kolom {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: block;
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.kolom + .kolom::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22%;
+  bottom: 22%;
+  width: 1px;
+  background: var(--garis);
+}
+.kolom:hover,
+.kolom:focus-within {
+  background: var(--tipis);
+}
+.kolom small {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--teal);
+}
+.kolom select,
+.kolom input {
+  width: 100%;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal);
+  padding: 2px 0;
+  outline: none;
+  cursor: pointer;
+}
+.kolom input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* seluruh kotak bisa diklik untuk membuka kalender */
+.dua {
+  display: flex;
+  gap: 8px;
+}
+.cari-kirim {
+  flex: none;
+  border: 0;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  padding: 0 34px;
+  cursor: pointer;
+  transition: .25s;
+}
+.cari-kirim:hover {
+  opacity: .85;
+}
+@media (max-width: 800px) {
+  .cari {
+    flex-direction: column;
+    border-radius: 24px;
+    padding: 12px;
+  }
+  .kolom + .kolom::before {
+    display: none;
+  }
+  .cari-kirim {
+    padding: 14px;
+  }
+}
+
+/* ===== KHUSUS HASIL PENCARIAN ===== */
+.band {
+  background: var(--teal);
+  text-align: center;
+  padding: 64px 24px 90px;
+  color: #fff;
+}
+.band h1 {
+  color: #fff;
+}
+.band p {
+  color: rgba(255,255,255,.78);
+  margin-top: 8px;
+}
+.band + .cari {
+  margin-top: -40px;
+}
+.judul-hasil {
+  padding: 24px 0 8px;
+}
+.jangkar {
+  display: block;
+  height: 0;
+  scroll-margin-top: 90px;
+}
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--garis);
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+}
+.chip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.chip a {
+  padding: 8px 18px;
+  border: 1px solid var(--garis);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 14px;
+  transition: .2s;
+}
+.chip a:hover {
+  border-color: var(--teal);
+}
+.urut {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--redup);
+}
+.urut input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.urut label {
+  padding: 7px 14px;
+  border: 1px solid var(--garis);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  transition: .2s;
+}
+.urut label:hover {
+  border-color: var(--teal);
+}
+.urut input:checked + label {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.urut input:focus-visible + label {
+  outline: 3px solid var(--teal);
+}
+
+/* FILTER destinasi: chip yang dipilih (alamat #ubud, #canggu, dst.) menyembunyikan villa lain */
+main:not(:has(:target)) .chip a[href="#semua"],
+main:has(#semua:target) .chip a[href="#semua"],
+main:has(#ubud:target) .chip a[href="#ubud"],
+main:has(#canggu:target) .chip a[href="#canggu"],
+main:has(#seminyak:target) .chip a[href="#seminyak"],
+main:has(#uluwatu:target) .chip a[href="#uluwatu"],
+main:has(#lembang:target) .chip a[href="#lembang"] {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+main:has(#ubud:target) .kartu-villa:not([data-lokasi="Ubud"]),
+main:has(#canggu:target) .kartu-villa:not([data-lokasi="Canggu"]),
+main:has(#seminyak:target) .kartu-villa:not([data-lokasi="Seminyak"]),
+main:has(#uluwatu:target) .kartu-villa:not([data-lokasi="Uluwatu"]),
+main:has(#lembang:target) .kartu-villa:not([data-lokasi="Lembang, Bandung"]) {
+  display: none;
+}
+
+/* URUTAN: tiap kartu membawa nomor urut (--naik, --turun, --rat) yang dipakai properti order */
+main:has(#u1:checked) .kartu-villa {
+  order: var(--naik);
+}
+main:has(#u2:checked) .kartu-villa {
+  order: var(--turun);
+}
+main:has(#u3:checked) .kartu-villa {
+  order: var(--rat);
+}
+@media (max-width: 800px) {
+  .filter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

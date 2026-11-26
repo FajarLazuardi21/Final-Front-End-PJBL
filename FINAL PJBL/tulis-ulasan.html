@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tulis Ulasan | Nyamanin</title>
+    <link rel="stylesheet" href="tulis-ulasan.css">
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="logo" href="index.html">nyamanin.com</a>
+      <nav><a href="index.html">Beranda</a><a href="disukai.html">Disukai</a><a href="riwayat.html" class="aktif">Riwayat</a><a href="tentang-kami.html">Tentang Kami</a><a href="profile.html">Profile</a></nav>
+    </header>
+    <main class="wadah sempit">
+      <a class="kembali" href="riwayat.html">&larr; Kembali ke riwayat</a>
+      <h1>Tulis Ulasan</h1>
+      <p class="sub">Ulasan Anda akan tampil di halaman villa dan membantu tamu lain memilih.</p>
+      <form class="kartu form" action="ulasan.html">
+        <!--Ringkasan villa. Ganti src dengan nama file foto Anda-->
+        <div class="villa-info">
+          <img src="img/Gambar depan villa/gambar (6).jpg" alt="Uma Serene Sanctuary Villa">
+          <div>
+            <b>Uma Serene Sanctuary Villa</b>
+            <p class="sub">Tegallalang, Ubud &middot; 14 - 17 Des 2024 &middot; 3 malam</p>
+          </div>
+        </div>
+        <fieldset class="bagian penilaian">
+          <legend>Bagaimana pengalaman menginap Anda?</legend>
+          <div class="bintang-input">
+            <input type="radio" name="nilai" id="n5" value="5" required>
+            <label for="n5" title="5 bintang">★</label>
+            <input type="radio" name="nilai" id="n4" value="4" required>
+            <label for="n4" title="4 bintang">★</label>
+            <input type="radio" name="nilai" id="n3" value="3" required>
+            <label for="n3" title="3 bintang">★</label>
+            <input type="radio" name="nilai" id="n2" value="2" required>
+            <label for="n2" title="2 bintang">★</label>
+            <input type="radio" name="nilai" id="n1" value="1" required>
+            <label for="n1" title="1 bintang">★</label>
+            <p class="teks-nilai"><span class="t0">Pilih jumlah bintang</span><span class="t5">Sangat puas</span><span class="t4">Puas</span><span class="t3">Cukup</span><span class="t2">Kurang puas</span><span class="t1">Tidak puas</span></p>
+          </div>
+        </fieldset>
+        <label class="bagian isi-ulasan">Ceritakan pengalaman Anda <textarea class="isian" name="ulasan" rows="6" minlength="20" maxlength="500" placeholder="Bagaimana kebersihan, pelayanan, dan suasana villa?" required></textarea></label>
+        <div class="bagian bagian-foto"><b>Foto (opsional)</b> <label class="unggah"><span class="unggah-judul">Tambah foto menginap Anda</span> <span class="sub">Format JPG atau PNG. Anda bisa memilih lebih dari satu foto.</span> <input type="file" name="foto" accept="image/png, image/jpeg" multiple></label></div>
+        <div class="bagian aksi"><a class="tombol tombol-garis" href="riwayat.html">Batal</a><button class="tombol" type="submit">Kirim Ulasan</button></div>
+      </form>
+    </main>
+    <footer class="footer">
+      <div class="footer-isi">
+        <div>
+          <img class="footer-logo" src="Logo Villa Tropis Nyamanin.com.png" alt="Logo Nyamanin">
+          <p>Selalu lengkapilah setiap momenmu bersama Nyamanin.com. Penyedia layanan persewaan villa dengan sistem dan layanan terbaik 24/7</p>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <p>(+62) 0858-9583-6445</p>
+          <p>(+62) 0895-1548-0677</p>
+          <p>nyamanin@gmail.com</p>
+        </div>
+        <div>
+          <h4>Lokasi</h4>
+          <p>JL.TANIMBAR NO 22</p>
+          <p>KASIN-KLOJEN</p>
+          <p>KOTA MALANG</p>
+        </div>
+        <div>
+          <h4>Sosial Media Kami</h4>
+          <a href="#">Instagram</a>
+          <a href="#">FaceBook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar Akun | Nyamanin</title>
+    <link rel="stylesheet" href="register.css">
+  </head>
+  <body>
+    <!-- Video background full layar -->
+    <video class="video-latar" autoplay muted loop playsinline preload="auto" poster="img/Gambar depan villa/gambar (11).jpg">
+      <source src="video/video.mp4" type="video/mp4">
+      <source src="video/villa.webm" type="video/webm">
+    </video>
+    <div class="overlay-latar"></div>
+
+    <main class="auth-wrapper">
+      <div class="kartu auth-kartu">
+        <div class="auth-header">
+          <a class="logo-link" href="index.html">nyamanin.com</a>
+          <h1>Buat Akun Baru</h1>
+          <p class="sub">Daftar sekarang untuk mulai booking villa impian Anda.</p>
+        </div>
+
+        <form class="auth-form" action="login.html">
+          <label class="label-grup">
+            <span class="label-teks">Nama Lengkap</span>
+            <input class="isian isian-timbul" type="text" placeholder="Contoh: Ahmad Fauzi" required>
+          </label>
+
+          <div class="dua-kolom">
+            <label class="label-grup">
+              <span class="label-teks">Nomor Telepon</span>
+              <input class="isian isian-timbul" type="tel" placeholder="0812-3456-7890" required>
+            </label>
+
+            <label class="label-grup">
+              <span class="label-teks">E-mail</span>
+              <input class="isian isian-timbul" type="email" placeholder="nama@email.com" required>
+            </label>
+          </div>
+
+          <div class="dua-kolom">
+            <label class="label-grup">
+              <span class="label-teks">Kata Sandi</span>
+              <input class="isian isian-timbul" type="password" placeholder="Minimal 8 karakter" minlength="8" required>
+            </label>
+
+            <label class="label-grup">
+              <span class="label-teks">Ulangi Sandi</span>
+              <input class="isian isian-timbul" type="password" placeholder="Ulangi sandi" minlength="8" required>
+            </label>
+          </div>
+
+          <label class="cek auth-syarat">
+            <input type="checkbox" required>
+            <span>Saya setuju dengan <a href="#">Syarat &amp; Ketentuan</a> serta <a href="#">Privasi</a></span>
+          </label>
+
+          <button class="tombol tombol-timbul penuh" type="submit">Daftar Sekarang</button>
+        </form>
+
+        <p class="auth-ganti">Sudah punya akun? <a href="login.html">Masuk di sini</a></p>
+      </div>
+    </main>
+  </body>
+</html>

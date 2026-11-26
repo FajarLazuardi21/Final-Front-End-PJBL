@@ -1,0 +1,341 @@
+/* CSS halaman riwayat: berdiri sendiri, tidak memakai file CSS lain */
+/* Hanya dua warna: teal #003f51 dan putih. Abu-abu/pudar = teal yang dibuat transparan. */
+:root {
+  --teal: #003f51;
+  --garis: rgba(0,63,81,.15);
+  --redup: rgba(0,63,81,.65);
+  --tipis: rgba(0,63,81,.07);
+  --radius: 16px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Plus Jakarta Sans",Arial,sans-serif;
+  background: #fff;
+  color: var(--teal);
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--tipis);
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+::placeholder {
+  color: var(--redup);
+  opacity: 1;
+}
+h1,
+h2 {
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+h1 {
+  font-size: clamp(2rem,4vw,3rem);
+}
+h2 {
+  font-size: clamp(1.5rem,2.6vw,2rem);
+}
+h3 {
+  line-height: 1.3;
+}
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+.wadah {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.sub {
+  color: var(--redup);
+  font-size: 14px;
+  margin-top: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none!important;
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 48px;
+  background: #fff;
+  border-bottom: 1px solid var(--garis);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background .3s;
+}
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--teal);
+}
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+.navbar nav a {
+  color: var(--redup);
+  font-size: 15px;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: .2s;
+}
+.navbar nav a:hover {
+  color: var(--teal);
+}
+.navbar nav a.aktif {
+  color: var(--teal);
+  font-weight: 700;
+  border-bottom-color: var(--teal);
+}
+
+/* Navbar transparan di atas foto (beranda); jadi (beranda) */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+  .navbar nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--teal);
+  color: #fff;
+  padding: 56px 48px;
+}
+.footer-isi {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+.footer h4 {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.footer p,
+.footer a {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,.88);
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+@media (max-width: 800px) {
+  .footer-isi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== TOMBOL ===== */
+.tombol {
+  display: inline-block;
+  padding: 12px 26px;
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: .25s;
+}
+.tombol:hover {
+  background: #fff;
+  color: var(--teal);
+}
+.tombol-garis {
+  background: #fff;
+  color: var(--teal);
+}
+.tombol-garis:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+/* ===== KARTU, FORM, LAYOUT, HARGA ===== */
+.kartu {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.dua-kolom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: var(--tipis);
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+}
+.badge.merah {
+  background: #fff;
+  border: 1px solid var(--teal);
+}
+@media (max-width: 800px) {
+  .dua-kolom {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== TAB & NOMOR HALAMAN ===== */
+.tab {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid var(--garis);
+  margin: 24px 0;
+}
+.tab a {
+  padding: 8px 0;
+  color: var(--redup);
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tab a:hover {
+  color: var(--teal);
+}
+.tab a.aktif {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+.paging {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--garis);
+  margin-top: 40px;
+  padding-top: 24px;
+  font-size: 14px;
+}
+.paging div {
+  display: flex;
+  gap: 8px;
+}
+.paging a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--garis);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  transition: .2s;
+}
+.paging a:hover {
+  border-color: var(--teal);
+}
+.paging a.aktif {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+/* CSS khusus Riwayat */
+.riwayat {
+  padding: 0;
+  overflow: hidden;
+}
+.riwayat .atas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--garis);
+  flex-wrap: wrap;
+}
+.riwayat .isi {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+.riwayat img {
+  height: 160px;
+  border-radius: 12px;
+}
+.tanggal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.tanggal small,
+.tanggal b {
+  display: block;
+}
+.baris-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.baris-total strong {
+  font-size: 20px;
+  color: var(--teal);
+}
+.kecil {
+  padding: 6px 14px;
+  font-size: 13px;
+  margin-top: 8px;
+}
+@media (max-width: 800px) {
+  .riwayat .isi {
+    grid-template-columns: 1fr;
+  }
+}

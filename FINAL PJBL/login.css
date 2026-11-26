@@ -1,0 +1,242 @@
+/* CSS halaman login: berdiri sendiri, tidak memakai file CSS lain */
+/* Desain web modern: video latar layar penuh, kartu tengah, input berefek timbul */
+:root {
+  --teal: #003f51;
+  --garis: rgba(0,63,81,.18);
+  --redup: rgba(0,63,81,.7);
+  --tipis: rgba(0,63,81,.05);
+  --radius: 20px; 
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  min-height: 100vh;
+}
+body {
+  font-family: "Plus Jakarta Sans",Arial,sans-serif;
+  color: var(--teal);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input, button {
+  font: inherit;
+  color: inherit;
+}
+::placeholder {
+  color: var(--redup);
+  opacity: .8;
+}
+
+/* ===== VIDEO LATAR FULL SCREEN ===== */
+.video-latar {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  background: var(--teal);
+  pointer-events: none;
+}
+.overlay-latar {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(0,63,81,.4) 0%, rgba(0,25,35,.75) 100%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===== STRUKTUR KARTU LOGIN ===== */
+.auth-wrapper {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+.auth-kartu {
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: var(--radius);
+  padding: 38px 32px;
+  box-shadow:
+    0 24px 48px rgba(0,25,35,.35),
+    0 4px 12px rgba(0,0,0,.1);
+}
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.logo-link {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--teal);
+  display: inline-block;
+  margin-bottom: 12px;
+  letter-spacing: -.02em;
+}
+.auth-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+.sub {
+  color: var(--redup);
+  font-size: 13.5px;
+  margin-top: 6px;
+}
+
+/* ===== ELEMEN TIMBUL (INPUT & FORM) ===== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.label-grup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+.label-teks {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--teal);
+}
+.isian-timbul {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,63,81,.16);
+  background: #fff;
+  font-size: 15px;
+  color: var(--teal);
+  /* Efek timbul (raised 3D shadow) */
+  box-shadow:
+    0 4px 10px rgba(0,63,81,.1),
+    0 1px 2px rgba(0,0,0,.06),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.isian-timbul:hover {
+  border-color: rgba(0,63,81,.3);
+  box-shadow:
+    0 6px 14px rgba(0,63,81,.14),
+    0 2px 4px rgba(0,0,0,.06),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+.isian-timbul:focus {
+  outline: none;
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(0,63,81,.2),
+    0 0 0 3px rgba(0,63,81,.15);
+}
+
+/* ===== OPSI CEK & LUPA SANDI ===== */
+.auth-opsi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 2px;
+}
+.cek {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--redup);
+}
+.cek input {
+  accent-color: var(--teal);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.lupa-sandi {
+  color: var(--redup);
+  font-weight: 600;
+}
+.lupa-sandi:hover {
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+/* ===== TOMBOL TIMBUL ===== */
+.tombol-timbul {
+  display: inline-block;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  /* Efek timbul tombol */
+  box-shadow:
+    0 8px 18px rgba(0,63,81,.35),
+    0 2px 4px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  margin-top: 6px;
+}
+.tombol-timbul:hover {
+  background: #002d3a;
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 24px rgba(0,63,81,.42),
+    0 4px 8px rgba(0,0,0,.15),
+    inset 0 1px 0 rgba(255,255,255,.3);
+}
+.tombol-timbul:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 4px 10px rgba(0,63,81,.3),
+    0 1px 2px rgba(0,0,0,.1);
+}
+.tombol-timbul.penuh {
+  width: 100%;
+}
+
+/* ===== FOOTER KARTU / GANTI HALAMAN ===== */
+.auth-ganti {
+  margin-top: 22px;
+  font-size: 13.5px;
+  text-align: center;
+  color: var(--redup);
+}
+.auth-ganti a {
+  color: var(--teal);
+  font-weight: 700;
+}
+.auth-ganti a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .auth-kartu {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+}

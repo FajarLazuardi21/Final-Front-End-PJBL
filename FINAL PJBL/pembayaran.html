@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pembayaran | Nyamanin</title>
+    <link rel="stylesheet" href="pembayaran.css">
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="logo" href="index.html">nyamanin.com</a>
+      <nav><a href="index.html" class="aktif">Beranda</a><a href="disukai.html">Disukai</a><a href="riwayat.html">Riwayat</a><a href="tentang-kami.html">Tentang Kami</a><a href="profile.html">Profile</a></nav>
+    </header>
+    <main class="wadah" id="metode-bayar">
+      <h1>Pilih metode pembayaranmu</h1>
+      <form class="isi-samping">
+        <section class="kartu">
+          <h3>Pilih Metode Pembayaran</h3>
+          <p class="sub">Semua metode terjamin aman &amp; terverifikasi langsung secara otomatis.</p>
+          <div class="daftar-metode"><label class="metode"><input type="radio" name="metode"><span class="logo-metode">Mastercard</span><span><b>Mastercard</b><br><small>Kartu kredit dan debit Mastercard</small></span></label> <label class="metode"><input type="radio" name="metode"><span class="logo-metode">Amazon Pay</span><span><b>Amazon Pay</b><br><small>Pembayaran via akun Amazon</small></span></label> <label class="metode"><input type="radio" name="metode"><span class="logo-metode">Visa</span><span><b>Visa</b><br><small>Jaringan kartu kredit dan debit Internasional.</small></span></label> <label class="metode"><input type="radio" name="metode" checked><span class="logo-metode">QRIS</span><span><b>QRIS</b><br><small>Pembayaran kode QR standar Indonesia</small></span></label></div>
+        </section>
+        <div>
+          <aside class="kartu ringkasan">
+            <img src="imgpb/gambar1.jpg" alt="Villa">
+            <div class="dua-kolom">
+              <div>
+                <small>Check-in</small>
+                <p><b>14 Des 2024</b></p>
+                <small>Mulai 14:00 WITA</small>
+              </div>
+              <div>
+                <small>Check-out</small>
+                <p><b>17 Des 2024</b></p>
+                <small>Sebelum 12:00 WITA</small>
+              </div>
+            </div>
+            <div class="baris"><span>Durasi &amp; Tamu:</span><b>3 Malam, 2 Tamu (1 Villa)</b></div>
+            <p class="sub"><b>RINGKASAN BIAYA</b> – termasuk semua pajak &amp; servis</p>
+            <div class="baris"><span>Tarif Sewa Villa (3 Malam)</span><b>Rp 6.100.000</b></div>
+            <div class="baris"><span>Biaya Layanan Nyamanin</span><b>Rp 250.000</b></div>
+            <div class="total"><span>Total Tagihan</span><strong>Rp 6.350.000</strong></div>
+          </aside>
+          <a class="tombol penuh bayar" href="#berhasil">Bayar</a>
+          <p class="sub demo">Untuk uji tampilan: <a href="#gagal">lihat modal pembayaran gagal</a></p>
+        </div>
+      </form>
+    </main>
+    <!--MODAL-->
+    <div class="modal" id="berhasil" role="dialog" aria-modal="true" aria-labelledby="judul-berhasil">
+      <a class="modal-latar" href="#metode-bayar" aria-label="Tutup"></a>
+      <div class="modal-kotak">
+        <div class="ikon sukses">&#10003;</div>
+        <h2 id="judul-berhasil">Pemesananmu sudah terkonfirmasi</h2>
+        <p class="sub">Terima kasih, pembayaranmu telah berhasil diproses. Detail pemesanan juga bisa kamu lihat di halaman Riwayat.</p>
+        <div class="rincian-modal">
+          <div class="baris"><span>Kode booking</span><b>AB-0123456789</b></div>
+          <div class="baris"><span>Villa</span><b>Uma Serene Sanctuary Villa</b></div>
+          <div class="baris"><span>Check-in &ndash; Check-out</span><b>14 &ndash; 17 Des 2024</b></div>
+          <div class="total"><span>Total pembayaran</span><strong>Rp 6.350.000</strong></div>
+        </div>
+        <div class="aksi-modal"><a class="tombol" href="riwayat.html">Lihat detail pemesanan</a><a class="tombol tombol-garis" href="index.html">Kembali ke beranda</a></div>
+      </div>
+    </div>
+    <div class="modal" id="gagal" role="dialog" aria-modal="true" aria-labelledby="judul-gagal">
+      <a class="modal-latar" href="#metode-bayar" aria-label="Tutup"></a>
+      <div class="modal-kotak">
+        <div class="ikon gagal">&#10005;</div>
+        <h2 id="judul-gagal">Pembayaran gagal diproses</h2>
+        <p class="sub">Pesanan belum terkonfirmasi dan tidak ada dana yang terpotong. Periksa saldo atau metode pembayaran, lalu coba lagi.</p>
+        <div class="rincian-modal">
+          <div class="baris"><span>Kode booking</span><b>AB-0123456789</b></div>
+          <div class="baris"><span>Villa</span><b>Uma Serene Sanctuary Villa</b></div>
+          <div class="baris"><span>Check-in &ndash; Check-out</span><b>14 &ndash; 17 Des 2024</b></div>
+          <div class="total"><span>Total pembayaran</span><strong>Rp 6.350.000</strong></div>
+        </div>
+        <div class="aksi-modal"><a class="tombol" href="#metode-bayar">Coba bayar lagi</a><a class="tombol tombol-garis" href="index.html">Kembali ke beranda</a></div>
+      </div>
+    </div>
+    <!--/MODAL-->
+    <footer class="footer">
+      <div class="footer-isi">
+        <div>
+          <img class="footer-logo" src="img/logo.png" alt="Logo Nyamanin">
+          <p>Selalu lengkapilah setiap momenmu bersama Nyamanin.com. Penyedia layanan persewaan villa dengan sistem dan layanan terbaik 24/7</p>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <p>(+62) 0858-9583-6445</p>
+          <p>(+62) 0895-1548-0677</p>
+          <p>nyamanin@gmail.com</p>
+        </div>
+        <div>
+          <h4>Lokasi</h4>
+          <p>JL.TANIMBAR NO 22</p>
+          <p>KASIN-KLOJEN</p>
+          <p>KOTA MALANG</p>
+        </div>
+        <div>
+          <h4>Sosial Media Kami</h4>
+          <a href="#">Instagram</a>
+          <a href="#">FaceBook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hasil Pencarian | Nyamanin</title>
+    <link rel="stylesheet" href="hasil-pencarian.css">
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="logo" href="index.html">nyamanin.com</a>
+      <nav><a href="index.html" class="aktif">Beranda</a><a href="disukai.html">Disukai</a><a href="riwayat.html">Riwayat</a><a href="tentang-kami.html">Tentang Kami</a><a href="profile.html">Profile</a></nav>
+    </header>
+    <section class="band">
+      <h1>Temukan villa pilihanmu</h1>
+      <p>Atur tujuan, tanggal, dan jumlah tamu</p>
+    </section>
+    <form class="cari" action="hasil-pencarian.html" method="get">
+      <label class="kolom">
+        <small>Destinasi</small>
+        <select name="tujuan"><option value="">Semua destinasi</option><option>Ubud</option><option>Canggu</option><option>Seminyak</option><option>Uluwatu</option><option>Lembang, Bandung</option></select>
+      </label>
+      <label class="kolom"><small>Check-in</small><input type="date" name="masuk" required></label>
+      <label class="kolom"><small>Check-out</small><input type="date" name="keluar" required></label>
+      <div class="kolom">
+        <small>Tamu &amp; kamar</small>
+        <div class="dua">
+          <select name="tamu" aria-label="Jumlah tamu"><option value="1">1 tamu</option><option value="2" selected>2 tamu</option><option value="3">3 tamu</option><option value="4">4 tamu</option><option value="5">5 tamu</option><option value="6">6 tamu</option><option value="8">8 tamu</option><option value="10">10 tamu</option></select>
+          <select name="kamar" aria-label="Jumlah kamar"><option value="1" selected>1 kamar</option><option value="2">2 kamar</option><option value="3">3 kamar</option><option value="4">4 kamar</option><option value="5">5 kamar</option></select>
+        </div>
+      </div>
+      <button class="cari-kirim" type="submit">Cari villa</button>
+    </form>
+    <main class="wadah">
+      <!--Penanda untuk filter (dibaca CSS lewat :target). Tautan chip di bawah mengarah ke id ini-->
+      <span class="jangkar" id="semua"></span>
+      <span class="jangkar" id="ubud"></span>
+      <span class="jangkar" id="canggu"></span>
+      <span class="jangkar" id="seminyak"></span>
+      <span class="jangkar" id="uluwatu"></span>
+      <span class="jangkar" id="lembang"></span>
+      <div class="judul-hasil">
+        <h2>Villa pilihan untuk Anda</h2>
+        <p class="sub">Pilih destinasi atau urutkan sesuai keinginan Anda</p>
+      </div>
+      <div class="filter">
+        <nav class="chip" aria-label="Filter destinasi"><a href="#semua">Semua</a><a href="#ubud">Ubud</a><a href="#canggu">Canggu</a><a href="#seminyak">Seminyak</a><a href="#uluwatu">Uluwatu</a><a href="#lembang">Lembang</a></nav>
+        <div class="urut" role="radiogroup" aria-label="Urutkan">Urutkan <input type="radio" name="urut" id="u0" checked><label for="u0">Rekomendasi</label> <input type="radio" name="urut" id="u1"><label for="u1">Harga terendah</label> <input type="radio" name="urut" id="u2"><label for="u2">Harga tertinggi</label> <input type="radio" name="urut" id="u3"><label for="u3">Rating</label></div>
+      </div>
+      <div class="grid-villa">
+        <article class="kartu-villa" data-lokasi="Ubud" style="--naik:4;--turun:6;--rat:2">
+          <div class="foto-villa"><img src="imghp/gambar1.jpg" alt="Uma Serene Sanctuary Villa" loading="lazy"><span class="label">Paling Disukai</span><label class="hati" aria-label="Simpan Uma Serene Sanctuary Villa"><input type="checkbox"><span></span></label><span class="rating">★ 4.96 (84)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Tegallalang, Ubud</p>
+            <h3>Uma Serene Sanctuary Villa</h3>
+            <span class="tag">2 Kamar Tidur</span>
+            <span class="tag">Kolam Renang Pribadi</span>
+            <span class="tag">Pemandangan Sawah</span>
+            <div class="harga-baris"><span class="harga">Rp 2.150.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Ubud" style="--naik:5;--turun:5;--rat:4">
+          <div class="foto-villa"><img src="imghp/gambar2.jpg" alt="Ubud Canopy House" loading="lazy"><label class="hati" aria-label="Simpan Ubud Canopy House"><input type="checkbox"><span></span></label><span class="rating">★ 4.91 (62)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Sayan, Ubud</p>
+            <h3>Ubud Canopy House</h3>
+            <span class="tag">3 Kamar Tidur</span>
+            <span class="tag">Kolam Renang Pribadi</span>
+            <span class="tag">Dapur Lengkap</span>
+            <div class="harga-baris"><span class="harga">Rp 2.850.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Ubud" style="--naik:8;--turun:2;--rat:5">
+          <div class="foto-villa"><img src="imghp/gambar3.jpg" alt="Royal Sanctuary Villa" loading="lazy"><span class="label">Paling Disukai</span><label class="hati" aria-label="Simpan Royal Sanctuary Villa"><input type="checkbox"><span></span></label><span class="rating">★ 4.90 (128)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Sayan, Ubud</p>
+            <h3>Royal Sanctuary Villa</h3>
+            <span class="tag">2 Kamar Tidur</span>
+            <span class="tag">Private Chef</span>
+            <span class="tag">Bathtub Outdoor</span>
+            <div class="harga-baris"><span class="harga">Rp 4.200.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Canggu" style="--naik:3;--turun:7;--rat:7">
+          <div class="foto-villa"><img src="imghp/gambar4.jpg" alt="Canggu Palm Retreat" loading="lazy"><label class="hati" aria-label="Simpan Canggu Palm Retreat"><input type="checkbox"><span></span></label><span class="rating">★ 4.84 (51)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Berawa, Canggu</p>
+            <h3>Canggu Palm Retreat</h3>
+            <span class="tag">2 Kamar Tidur</span>
+            <span class="tag">Kolam Renang Pribadi</span>
+            <div class="harga-baris"><span class="harga">Rp 1.950.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Canggu" style="--naik:2;--turun:8;--rat:9">
+          <div class="foto-villa"><img src="imghp/gambar5.jpg" alt="Echo Beach Loft" loading="lazy"><label class="hati" aria-label="Simpan Echo Beach Loft"><input type="checkbox"><span></span></label><span class="rating">★ 4.78 (33)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Echo Beach, Canggu</p>
+            <h3>Echo Beach Loft</h3>
+            <span class="tag">1 Kamar Tidur</span>
+            <span class="tag">Dekat Pantai</span>
+            <div class="harga-baris"><span class="harga">Rp 1.450.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Seminyak" style="--naik:6;--turun:4;--rat:6">
+          <div class="foto-villa"><img src="imghp/gambar6.jpg" alt="Seminyak Sunset Villa" loading="lazy"><span class="label">Paling Disukai</span><label class="hati" aria-label="Simpan Seminyak Sunset Villa"><input type="checkbox"><span></span></label><span class="rating">★ 4.88 (47)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Petitenget, Seminyak</p>
+            <h3>Seminyak Sunset Villa</h3>
+            <span class="tag">3 Kamar Tidur</span>
+            <span class="tag">Kolam Renang Pribadi</span>
+            <div class="harga-baris"><span class="harga">Rp 3.100.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Uluwatu" style="--naik:7;--turun:3;--rat:1">
+          <div class="foto-villa"><img src="imghp/gambar7.jpg" alt="Sea House Villa" loading="lazy"><span class="label">Paling Disukai</span><label class="hati" aria-label="Simpan Sea House Villa"><input type="checkbox"><span></span></label><span class="rating">★ 5.00 (12)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Uluwatu, Bali</p>
+            <h3>Sea House Villa</h3>
+            <span class="tag">3 Kamar Tidur</span>
+            <span class="tag">Pemandangan Laut</span>
+            <div class="harga-baris"><span class="harga">Rp 3.500.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Uluwatu" style="--naik:9;--turun:1;--rat:3">
+          <div class="foto-villa"><img src="imghp/gambar8.jpg" alt="Cliffside Blue Villa" loading="lazy"><label class="hati" aria-label="Simpan Cliffside Blue Villa"><input type="checkbox"><span></span></label><span class="rating">★ 4.95 (29)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Pecatu, Uluwatu</p>
+            <h3>Cliffside Blue Villa</h3>
+            <span class="tag">4 Kamar Tidur</span>
+            <span class="tag">Infinity Pool</span>
+            <div class="harga-baris"><span class="harga">Rp 5.200.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+        <article class="kartu-villa" data-lokasi="Lembang, Bandung" style="--naik:1;--turun:9;--rat:8">
+          <div class="foto-villa"><img src="imghp/gambar9.jpg" alt="Dago Pine Cabin" loading="lazy"><label class="hati" aria-label="Simpan Dago Pine Cabin"><input type="checkbox"><span></span></label><span class="rating">★ 4.82 (76)</span></div>
+          <div class="isi-villa">
+            <p class="lokasi">Lembang, Bandung</p>
+            <h3>Dago Pine Cabin</h3>
+            <span class="tag">2 Kamar Tidur</span>
+            <span class="tag">Pemandangan Pegunungan</span>
+            <div class="harga-baris"><span class="harga">Rp 1.250.000 <small>/ malam</small></span><a class="lihat" href="detail-villa.html">Lihat Detail</a></div>
+          </div>
+        </article>
+      </div>
+      <div class="paging">
+        <span>Menampilkan halaman <b>1</b> dari <b>5</b></span>
+        <div><a href="#">&lsaquo;</a><a class="aktif" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">...</a><a href="#">5</a><a href="#">&rsaquo;</a></div>
+        <span></span>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-isi">
+        <div>
+          <img class="footer-logo" src="img/logo.png" alt="Logo Nyamanin">
+          <p>Selalu lengkapilah setiap momenmu bersama Nyamanin.com. Penyedia layanan persewaan villa dengan sistem dan layanan terbaik 24/7</p>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <p>(+62) 0858-9583-6445</p>
+          <p>(+62) 0895-1548-0677</p>
+          <p>nyamanin@gmail.com</p>
+        </div>
+        <div>
+          <h4>Lokasi</h4>
+          <p>JL.TANIMBAR NO 22</p>
+          <p>KASIN-KLOJEN</p>
+          <p>KOTA MALANG</p>
+        </div>
+        <div>
+          <h4>Sosial Media Kami</h4>
+          <a href="#">Instagram</a>
+          <a href="#">FaceBook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

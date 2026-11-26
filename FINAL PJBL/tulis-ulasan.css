@@ -1,0 +1,388 @@
+/* CSS halaman ulasan: berdiri sendiri, tidak memakai file CSS lain */
+/* Hanya dua warna: teal #003f51 dan putih. Abu-abu/pudar = teal yang dibuat transparan. */
+:root {
+  --teal: #003f51;
+  --garis: rgba(0,63,81,.15);
+  --redup: rgba(0,63,81,.65);
+  --tipis: rgba(0,63,81,.07);
+  --radius: 16px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Plus Jakarta Sans",Arial,sans-serif;
+  background: #fff;
+  color: var(--teal);
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--tipis);
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+::placeholder {
+  color: var(--redup);
+  opacity: 1;
+}
+h1,
+h2 {
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+h1 {
+  font-size: clamp(2rem,4vw,3rem);
+}
+h2 {
+  font-size: clamp(1.5rem,2.6vw,2rem);
+}
+h3 {
+  line-height: 1.3;
+}
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+.wadah {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.sub {
+  color: var(--redup);
+  font-size: 14px;
+  margin-top: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none!important;
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 48px;
+  background: #fff;
+  border-bottom: 1px solid var(--garis);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background .3s;
+}
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--teal);
+}
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+.navbar nav a {
+  color: var(--redup);
+  font-size: 15px;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: .2s;
+}
+.navbar nav a:hover {
+  color: var(--teal);
+}
+.navbar nav a.aktif {
+  color: var(--teal);
+  font-weight: 700;
+  border-bottom-color: var(--teal);
+}
+
+/* Navbar transparan di atas foto (beranda); jadi (beranda) */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+  .navbar nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--teal);
+  color: #fff;
+  padding: 56px 48px;
+}
+.footer-isi {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+.footer h4 {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.footer p,
+.footer a {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,.88);
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+@media (max-width: 800px) {
+  .footer-isi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== TOMBOL ===== */
+.tombol {
+  display: inline-block;
+  padding: 12px 26px;
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: .25s;
+}
+.tombol:hover {
+  background: #fff;
+  color: var(--teal);
+}
+.tombol-garis {
+  background: #fff;
+  color: var(--teal);
+}
+.tombol-garis:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+/* ===== KARTU, FORM, LAYOUT, HARGA ===== */
+.kartu {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+/* ===== KHUSUS TULIS ULASAN ===== */
+.sempit {
+  max-width: 760px;
+}
+.kembali {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--redup);
+  font-size: 14px;
+}
+.kembali:hover {
+  color: var(--teal);
+}
+.form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.villa-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--garis);
+}
+.villa-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.villa-info b {
+  font-size: 17px;
+  display: block;
+}
+.bagian {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.penilaian {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.penilaian legend {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.bintang-input {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  flex-wrap: wrap;
+}
+.bintang-input input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.bintang-input label {
+  font-size: 34px;
+  color: rgba(0, 63, 81, .2);
+  cursor: pointer;
+  line-height: 1;
+  transition: color .2s, transform .15s;
+}
+.bintang-input label:hover,
+.bintang-input label:hover ~ label,
+.bintang-input input:checked ~ label {
+  color: #f5b301;
+}
+.bintang-input label:hover {
+  transform: scale(1.15);
+}
+.teks-nilai {
+  width: 100%;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal);
+}
+.teks-nilai span {
+  display: none;
+}
+.teks-nilai .t0 {
+  display: inline;
+  color: var(--redup);
+  font-weight: 400;
+}
+#n5:checked ~ .teks-nilai .t0,
+#n4:checked ~ .teks-nilai .t0,
+#n3:checked ~ .teks-nilai .t0,
+#n2:checked ~ .teks-nilai .t0,
+#n1:checked ~ .teks-nilai .t0 {
+  display: none;
+}
+#n5:checked ~ .teks-nilai .t5,
+#n4:checked ~ .teks-nilai .t4,
+#n3:checked ~ .teks-nilai .t3,
+#n2:checked ~ .teks-nilai .t2,
+#n1:checked ~ .teks-nilai .t1 {
+  display: inline;
+}
+.isi-ulasan {
+  font-weight: 700;
+  font-size: 15px;
+}
+.isian {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  resize: vertical;
+  min-height: 130px;
+  transition: border-color .2s;
+}
+.isian:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+.bagian-foto b {
+  font-size: 15px;
+}
+.unggah {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 28px 20px;
+  border: 2px dashed var(--garis);
+  border-radius: 12px;
+  background: var(--tipis);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color .2s, background .2s;
+}
+.unggah:hover {
+  border-color: var(--teal);
+  background: rgba(0, 63, 81, .05);
+}
+.unggah-judul {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--teal);
+}
+.unggah input[type="file"] {
+  display: none;
+}
+.aksi {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--garis);
+}
+@media (max-width: 600px) {
+  .villa-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  .aksi {
+    flex-direction: column-reverse;
+  }
+  .aksi .tombol {
+    width: 100%;
+  }
+}
